@@ -1,24 +1,22 @@
+import Home from 'components/Home';
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import { BrowserRouter,Router, Route, Link, Switch} from 'react-router-dom'
+import MyHome from './components/Home'
+import MyBox from './components/Box'
 function App() {
   return (
+      <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>
+          <Link to="/home">家</Link>
+          <Link to="/box">盒子</Link>
+          <Switch>
+            <Route path="/home" component={MyHome}></Route>
+            <Route path="/box" component={ MyBox }></Route>
+          </Switch>
+        </div>
     </div>
+      </BrowserRouter>
   );
 }
 
