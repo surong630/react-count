@@ -7,7 +7,7 @@ function App() {
           <ul>
             <li>
               <Link to="/">
-                Money
+                Money, 333
               </Link>
               </li>
             <li>
